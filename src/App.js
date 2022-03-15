@@ -37,7 +37,6 @@ function App() {
       return obj.back.letter === key.toUpperCase();
     });
     
-
     if (letterCard && letterCard.back.letter !== currentLetter) {
       setCurrentLetter(letterCard.back.letter);
       handleChoice(letterCard);
@@ -50,6 +49,7 @@ function App() {
 
   // shuffle cards
   const shullfleCards = () => {
+    setCurrentLetter("")
     var selectedBackImages = Constants.backImages.slice(offset, offset + Constants.helmetImages.length * 2)
     console.log(selectedBackImages)
     var shuffledBack = selectedBackImages.sort(() => Math.random() - 0.5);
