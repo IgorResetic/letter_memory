@@ -50,11 +50,11 @@ function App() {
   // shuffle cards
   const shullfleCards = () => {
     setCurrentLetter("")
-    var selectedBackImages = Constants.backImages.slice(offset, offset + Constants.helmetImages.length * 2)
+    var selectedBackImages = Constants.backImages.slice(offset, offset + Constants.trollsImages.length * 2)
     console.log(selectedBackImages)
     var shuffledBack = selectedBackImages.sort(() => Math.random() - 0.5);
 
-    const shuffleCards = [...Constants.helmetImages, ...Constants.helmetImages]
+    const shuffleCards = [...Constants.trollsImages, ...Constants.trollsImages]
       .sort(() => Math.random() - 0.5)
       .map((card) => ({
         ...card,

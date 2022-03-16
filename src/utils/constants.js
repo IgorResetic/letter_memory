@@ -1,20 +1,30 @@
 export const frozenImages = [
-    { src: "/img/frozen_deer.png", matched: false },
-    { src: "/img/frozen_kristof.png", matched: false },
-    { src: "/img/frozen_snow.png", matched: false },
-    { src: "/img/frozen_olaf.png", matched: false },
-    { src: "/img/frozen_ana.png", matched: false },
-    { src: "/img/frozen_elsa.png", matched: false },
+    { src: "/img/frozen/frozen_deer.png", matched: false },
+    { src: "/img/frozen/frozen_kristof.png", matched: false },
+    { src: "/img/frozen/frozen_snow.png", matched: false },
+    { src: "/img/frozen/frozen_olaf.png", matched: false },
+    { src: "/img/frozen/frozen_ana.png", matched: false },
+    { src: "/img/frozen/frozen_elsa.png", matched: false },
   ];
 
 export const helmetImages = [
-    { src: "/img/helmet-1.png", matched: false },
-    { src: "/img/potion-1.png", matched: false },
-    { src: "/img/ring-1.png", matched: false },
-    { src: "/img/scroll-1.png", matched: false },
-    { src: "/img/shield-1.png", matched: false },
-    { src: "/img/sword-1.png", matched: false },
+    { src: "/img/helmet/helmet-1.png", matched: false },
+    { src: "/img/helmet/potion-1.png", matched: false },
+    { src: "/img/helmet/ring-1.png", matched: false },
+    { src: "/img/helmet/scroll-1.png", matched: false },
+    { src: "/img/helmet/shield-1.png", matched: false },
+    { src: "/img/helmet/sword-1.png", matched: false },
   ];
+
+export const trollsImages = [
+  { src: "/img/trolls/trolls_branch.png", matched: false },
+  { src: "/img/trolls/trolls_bridget.png", matched: false },
+  { src: "/img/trolls/trolls_chefe.png", matched: false },
+  { src: "/img/trolls/trolls_creek.png", matched: false },
+  { src: "/img/trolls/trolls_gristle.png", matched: false },
+  { src: "/img/trolls/trolls_lala.png", matched: false },
+
+]
 
 export const backImages = [
   { src: "/img/cover/cover_a.png", letter: "A" },
