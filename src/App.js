@@ -3,24 +3,9 @@ import React, { useEffect, useState, useRef } from "react";
 import "./App.css";
 import SingleCard from "./components/SingleCard";
 import * as Constants from "./utils/constants";
+import useEventListener from "./components/listeners/UseEventListener"
 
 var counter = 0;
-
-const useEventListener = (eventName, handler, element = window) => {
-  const savedHandler = useRef();
-
-  useEffect(() => {
-    savedHandler.current = handler;
-  }, [handler]);
-
-  useEffect(() => {
-    const eventListener = (event) => savedHandler.current(event);
-    element.addEventListener(eventName, eventListener);
-    return () => {
-      element.removeEventListener(eventName, eventListener);
-    };
-  }, [eventName, element]);
-};
 
 function App() {
   const [cards, setCards] = useState([]);
@@ -46,7 +31,7 @@ function App() {
   };
 
   useEventListener("keydown", handler);
-
+  
   // shuffle cards
   const shullfleCards = () => {
     setCurrentLetter("")
