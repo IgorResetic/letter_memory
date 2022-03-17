@@ -22,7 +22,7 @@ const useEventListener = (eventName, handler, element = window) => {
   }, [eventName, element]);
 };
 
-function App() {
+function App({ items }) {
   const [cards, setCards] = useState([]);
   const [turns, setTurns] = useState(0);
   const [choiceOne, setChoiceOne] = useState(null);
@@ -50,11 +50,11 @@ function App() {
   // shuffle cards
   const shullfleCards = () => {
     setCurrentLetter("")
-    var selectedBackImages = Constants.backImages.slice(offset, offset + Constants.trollsImages.length * 2)
+    var selectedBackImages = Constants.backImages.slice(offset, offset + items.length * 2)
     console.log(selectedBackImages)
     var shuffledBack = selectedBackImages.sort(() => Math.random() - 0.5);
 
-    const shuffleCards = [...Constants.trollsImages, ...Constants.trollsImages]
+    const shuffleCards = [...items, ...items]
       .sort(() => Math.random() - 0.5)
       .map((card) => ({
         ...card,

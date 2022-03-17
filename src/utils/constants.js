@@ -50,3 +50,9 @@ export const backImages = [
   { src: "/img/cover/cover_v.png", letter: "V" },
   { src: "/img/cover/cover_z.png", letter: "Z" },
 ];
+
+export const memoryGames = [
+  {title: "Helmet", src: "/img/helmet/helmet-1.png", key: 1, cards: helmetImages },
+  {title: "Frozen", src: "/img/frozen/frozen_elsa.png", key: 2, cards: frozenImages },
+  {title: "Trolls", src: "/img/trolls/trolls_lala.png", key: 3, cards: trollsImages },
+]

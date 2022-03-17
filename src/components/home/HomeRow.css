@@ -1,0 +1,13 @@
+.HomeRow {
+    max-width: 860px;
+    margin: 40px auto;
+}
+  
+
+.row {
+    width: 100%;
+    margin-top: 40px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 0px;
+}
