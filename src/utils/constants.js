@@ -52,7 +52,7 @@ export const backImages = [
 ];
 
 export const memoryGames = [
-  {title: "Helmet", src: "/img/helmet/helmet-1.png", key: 1, cards: helmetImages },
-  {title: "Frozen", src: "/img/frozen/frozen_elsa.png", key: 2, cards: frozenImages },
-  {title: "Trolls", src: "/img/trolls/trolls_lala.png", key: 3, cards: trollsImages },
+  {title: "Frozen", src: "/img/home/memory_game_frozen.png", key: 1, cards: frozenImages, position:"1" },
+  {title: "Helmet", src: "/img/home/memory_game_helmet.png", key: 2, cards: helmetImages, position:"2" },
+  {title: "Trolls", src: "/img/home/memory_game_trolls.png", key: 3, cards: trollsImages, position:"3" },
 ]

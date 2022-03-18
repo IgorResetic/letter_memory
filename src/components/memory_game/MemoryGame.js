@@ -17,7 +17,6 @@ const MemoryGame= ( {items}) => {
   const [offset, setOffest] = useState(0);
 
   const handler = ({ key }) => {
-    console.log("Pressed: " + key.toUpperCase());
     var letterCard = cards.find((obj) => {
       return obj.back.letter === key.toUpperCase();
     });
