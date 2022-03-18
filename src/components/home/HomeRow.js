@@ -1,13 +1,13 @@
 import React from "react";
-import { memoryGames } from "../../utils/constants";
-import SingleCard from "../SingleCard";
+import { memoryGames, frozenImages, trollsImages } from "../../utils/constants";
+import SingleCard from "./SingleItem";
 import SingleItem from "./SingleItem";
 import './HomeRow.css';
 
-const HomeRow = ({ title, items }) => {
+const HomeRow = ({ title, items, handler }) => {
 
     const handleChoice = (cards) => {
-        console.log(cards)
+        handler(cards)
     }  
 
     return ( 
