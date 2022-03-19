@@ -1,4 +1,5 @@
 import { computeHeadingLevel } from "@testing-library/react";
+import { useNavigate } from 'react-router-dom';
 import React, { useEffect, useState, useRef } from "react";
 import "./MemoryGame.css";
 import SingleCard from "../single_card/SingleCard";
@@ -8,6 +9,8 @@ import useEventListener from "../listeners/UseEventListener"
 var counter = 0;
 
 const MemoryGame= ( {items}) => {
+  const navigate = useNavigate()
+
   const [cards, setCards] = useState([]);
   const [turns, setTurns] = useState(0);
   const [choiceOne, setChoiceOne] = useState(null);
@@ -16,7 +19,17 @@ const MemoryGame= ( {items}) => {
   const [currentLetter, setCurrentLetter] = useState("");
   const [offset, setOffest] = useState(0);
 
+  var images = items
+
   const handler = ({ key }) => {
+    if(key === " ") {
+      shullfleCards();
+    }
+
+    if(key === "Backspace") {
+      navigate('/')
+    }
+
     var letterCard = cards.find((obj) => {
       return obj.back.letter === key.toUpperCase();
     });
@@ -30,15 +43,21 @@ const MemoryGame= ( {items}) => {
   };
 
   useEventListener("keydown", handler);
-  
+
   // shuffle cards
   const shullfleCards = () => {
+    console.log("shullfle")
     setCurrentLetter("")
-    var selectedBackImages = Constants.backImages.slice(offset, offset + items.length * 2)
-    console.log(selectedBackImages)
+
+    if(items.length === 0) {
+      console.log("set t")
+      images = JSON.parse(window.localStorage.getItem('items'))
+    }
+
+    var selectedBackImages = Constants.backImages.slice(offset, offset + images.length * 2)
     var shuffledBack = selectedBackImages.sort(() => Math.random() - 0.5);
 
-    const shuffleCards = [...items, ...items]
+    const shuffleCards = [...images, ...images]
       .sort(() => Math.random() - 0.5)
       .map((card) => ({
         ...card,
@@ -94,7 +113,6 @@ const MemoryGame= ( {items}) => {
     counter = 0;
     shullfleCards();
   }, []);
-
 
   return (
     <div className="MemoryGame">
