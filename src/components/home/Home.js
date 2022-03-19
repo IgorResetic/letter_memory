@@ -11,6 +11,7 @@ const Home = ({ memoryHandler }) => {
     var rowTitle = "Memory"
 
     const clickHandler = (items) => {
+        window.localStorage.setItem('items', JSON.stringify(items))
         console.log("This is click")
         memoryHandler(items)
         navigate('/memory_game')
