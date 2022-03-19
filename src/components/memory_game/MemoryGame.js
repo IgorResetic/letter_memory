@@ -42,7 +42,7 @@ const MemoryGame= ( {items}) => {
     letterCard = null;
   };
 
-  useEventListener("keydown", handler);
+  useEventListener("keyup", handler);
 
   // shuffle cards
   const shullfleCards = () => {
