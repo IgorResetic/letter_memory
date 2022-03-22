@@ -1,5 +1,5 @@
 .HomeRow {
-    max-width: 860px;
+    max-width: 1080px;
     margin: 40px auto;
 }
   
@@ -8,5 +8,6 @@
     margin-top: 40px;
     display: flex;
     justify-content: flex-start;
-    gap: 2rem;
+    flex-wrap: wrap;
+    gap: 1rem;
 }

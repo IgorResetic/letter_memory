@@ -23,8 +23,26 @@ export const trollsImages = [
   { src: "/img/trolls/trolls_creek.png", matched: false },
   { src: "/img/trolls/trolls_gristle.png", matched: false },
   { src: "/img/trolls/trolls_lala.png", matched: false },
+];
 
+export const bergensImages = [
+  { src: "/img/bergens/bubbily.png", matched: false },
+  { src: "/img/bergens/king_glister.png", matched: false },
+  { src: "/img/bergens/starfunk.png", matched: false },
+  { src: "/img/bergens/trolls_bridget.png", matched: false },
+  { src: "/img/bergens/trolls_chefe.png", matched: false },
+  { src: "/img/bergens/trolls_gristle.png", matched: false },
 ]
+
+export const trollsTwoImages = [
+  { src: "/img/trollos_2/barbara.png", matched: false },
+  { src: "/img/trollos_2/debby.png", matched: false },
+  { src: "/img/trollos_2/delta.png", matched: false },
+  { src: "/img/trollos_2/dirigent.png", matched: false },
+  { src: "/img/trollos_2/dreamworker.png", matched: false },
+  { src: "/img/trollos_2/prinzea_brigita.png", matched: false },
+]
+
 
 export const backImages = [
   { src: "/img/cover/cover_a.png", letter: "A" },
@@ -55,4 +73,6 @@ export const memoryGames = [
   {title: "Frozen", src: "/img/home/memory_game_frozen.png", key: 1, cards: frozenImages, position:"1" },
   {title: "Helmet", src: "/img/home/memory_game_helmet.png", key: 2, cards: helmetImages, position:"2" },
   {title: "Trolls", src: "/img/home/memory_game_trolls.png", key: 3, cards: trollsImages, position:"3" },
+  {title: "Trolls", src: "/img/home/memory_game_bergens.png", key: 4, cards: bergensImages, position:"4" },
+  {title: "Trolls", src: "/img/home/memory_game_trollos_2.png", key: 5, cards: trollsTwoImages, position:"5" },
 ]
