@@ -1,9 +1,9 @@
 import React from "react";
 import ReactDOM from 'react-dom';
 import './index.css';
-import MemoryGame from './components/memory_game/MemoryGame';
+import MemoryGame from './memory_game/MemoryGame';
 import App from './App';
-import Home from './components/home/Home'
+import Home from './home/Home'
 
 ReactDOM.render(
   <React.StrictMode>

@@ -69,10 +69,17 @@ export const backImages = [
   { src: "/img/cover/cover_z.png", letter: "Z" },
 ];
 
+export const FROZEN = "Frozen_Memory_Game"
+export const TROLLS = "Trolls_Memory_Game"
+export const HELMET = "Helmet_Memory_Game"
+export const TROLLS_TWO = "Trolls_TwoMemory_Game"
+export const BERGENS = "Bergens_Memory_Game"
+
 export const memoryGames = [
-  {title: "Frozen", src: "/img/home/memory_game_frozen.png", key: 1, cards: frozenImages, position:"1" },
-  {title: "Helmet", src: "/img/home/memory_game_helmet.png", key: 2, cards: helmetImages, position:"2" },
-  {title: "Trolls", src: "/img/home/memory_game_trolls.png", key: 3, cards: trollsImages, position:"3" },
-  {title: "Trolls", src: "/img/home/memory_game_bergens.png", key: 4, cards: bergensImages, position:"4" },
-  {title: "Trolls", src: "/img/home/memory_game_trollos_2.png", key: 5, cards: trollsTwoImages, position:"5" },
+  {title: "Frozen", src: "/img/home/memory_game_frozen.png", key: 1, cards: frozenImages, position:"1", name: FROZEN },
+  {title: "Helmet", src: "/img/home/memory_game_helmet.png", key: 2, cards: helmetImages, position:"2", name: HELMET },
+  {title: "Trolls", src: "/img/home/memory_game_trolls.png", key: 3, cards: trollsImages, position:"3", name: TROLLS },
+  {title: "Bergens", src: "/img/home/memory_game_bergens.png", key: 4, cards: bergensImages, position:"4", name: BERGENS},
+  {title: "Trolls Two", src: "/img/home/memory_game_trollos_2.png", key: 5, cards: trollsTwoImages, position:"5", name: TROLLS_TWO },
 ]
+

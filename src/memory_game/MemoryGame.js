@@ -1,16 +1,19 @@
 import { computeHeadingLevel } from "@testing-library/react";
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import React, { useEffect, useState, useRef } from "react";
 import "./MemoryGame.css";
-import SingleCard from "../single_card/SingleCard";
-import * as Constants from "../../utils/constants";
-import useEventListener from "../listeners/UseEventListener"
+import SingleCard from "../components/single_card/SingleCard";
+import * as Constants from "../utils/constants";
+import useEventListener from "../utils/listeners/UseEventListener"
+import { getImages, getTitle } from "./MemoryGameHelpers";
 
 var counter = 0;
 
-const MemoryGame= ( {items}) => {
-  const navigate = useNavigate()
+const MemoryGame= () => {
+  const { name } = useParams()
 
+  const navigate = useNavigate()
+ 
   const [cards, setCards] = useState([]);
   const [turns, setTurns] = useState(0);
   const [choiceOne, setChoiceOne] = useState(null);
@@ -18,8 +21,6 @@ const MemoryGame= ( {items}) => {
   const [disabled, setDisabled] = useState(false);
   const [currentLetter, setCurrentLetter] = useState("");
   const [offset, setOffest] = useState(0);
-
-  var images = items
 
   const handler = ({ key }) => {
     if(key === " ") {
@@ -36,7 +37,7 @@ const MemoryGame= ( {items}) => {
     
     if (letterCard && letterCard.back.letter !== currentLetter) {
       setCurrentLetter(letterCard.back.letter);
-      handleChoice(letterCard);
+      handleChoice(letterCard); 
     } 
 
     letterCard = null;
@@ -46,13 +47,11 @@ const MemoryGame= ( {items}) => {
 
   // shuffle cards
   const shullfleCards = () => {
-    console.log("shullfle")
     setCurrentLetter("")
 
-    if(items.length === 0) {
-      console.log("set t")
-      images = JSON.parse(window.localStorage.getItem('items'))
-    }
+    var images = getImages(name)
+    console.log("images" + name)
+    console.log(images)
 
     var selectedBackImages = Constants.backImages.slice(offset, offset + images.length * 2)
     var shuffledBack = selectedBackImages.sort(() => Math.random() - 0.5);
@@ -82,7 +81,6 @@ const MemoryGame= ( {items}) => {
     if (choiceOne && choiceTwo) {
       setDisabled(true);
       if (choiceOne.src === choiceTwo.src) {
-        console.log("Selected");
         setCards((prevCards) => {
           return prevCards.map((card) => {
             if (card.src === choiceOne.src) {
@@ -116,7 +114,7 @@ const MemoryGame= ( {items}) => {
 
   return (
     <div className="MemoryGame">
-      <h1>Frozen Magic Match</h1>
+      <h1>{getTitle(name)} Magic Match</h1>
       <div className="main-bar">
         <button className="button" onClick={shullfleCards}>New Game</button>
         <input className="input" type="number" min="0" max="8" value={offset} onChange={e => setOffest(e.target.value)}></input>

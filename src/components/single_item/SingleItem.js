@@ -4,7 +4,7 @@ import "./SingleItem.css"
 const SingleItem = ({item, handler}) => {
 
     const handleClick = () => {
-        handler(item.cards)
+        handler(item.name)
     }
 
     console.log(item)

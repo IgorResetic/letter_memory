@@ -1,13 +1,13 @@
 import React from "react";
-import SingleItem from "./SingleItem";
-import useEventListener from "../listeners/UseEventListener"
+import SingleItem from "../components/single_item/SingleItem";
+import useEventListener from "../utils/listeners/UseEventListener"
 import './HomeRow.css';
 
 
 const HomeRow = ({ title, items, handler }) => {
 
-    const handleChoice = (cards) => {
-        handler(cards)
+    const handleChoice = (name) => {
+        handler(name)
     }  
 
     const handleKeyEntery = ({key}) => {
@@ -17,7 +17,7 @@ const HomeRow = ({ title, items, handler }) => {
             return obj.position === key
           });
           
-        handler(card.cards)
+        handler(card.name)
     }
 
     useEventListener("keydown", handleKeyEntery);
