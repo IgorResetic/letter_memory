@@ -1,0 +1,33 @@
+.GameRow {
+    max-width: 1080px;
+    margin: 40px auto;
+}
+.item-row {
+    width: 100%;
+    margin-top: 40px;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
+
+.selected {
+    transform: rotateY(0deg);
+    transition: all ease-in 0.3s;
+}
+
+.not-selected {
+    transform: rotateY(90deg);
+    transition: all ease-in 0.3s;
+}
+
+.letter-cards{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.show {
+    transform: rotateY(0deg);
+    transition: all ease-in 0.3s;
+}

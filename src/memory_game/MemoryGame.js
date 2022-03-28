@@ -9,11 +9,11 @@ import { getImages, getTitle } from "./MemoryGameHelpers";
 
 var counter = 0;
 
-const MemoryGame= () => {
+const MemoryGame = () => {
   const { name } = useParams()
 
   const navigate = useNavigate()
- 
+
   const [cards, setCards] = useState([]);
   const [turns, setTurns] = useState(0);
   const [choiceOne, setChoiceOne] = useState(null);
@@ -23,22 +23,22 @@ const MemoryGame= () => {
   const [offset, setOffest] = useState(0);
 
   const handler = ({ key }) => {
-    if(key === " ") {
+    if (key === " ") {
       shullfleCards();
     }
 
-    if(key === "Backspace") {
+    if (key === "Backspace") {
       navigate('/')
     }
 
     var letterCard = cards.find((obj) => {
       return obj.back.letter === key.toUpperCase();
     });
-    
+
     if (letterCard && letterCard.back.letter !== currentLetter) {
       setCurrentLetter(letterCard.back.letter);
-      handleChoice(letterCard); 
-    } 
+      handleChoice(letterCard);
+    }
 
     letterCard = null;
   };
@@ -120,7 +120,7 @@ const MemoryGame= () => {
         <input className="input" type="number" min="0" max="8" value={offset} onChange={e => setOffest(e.target.value)}></input>
       </div>
 
-      <div className="card-grid">
+      <div className="card-grid-mem">
         {cards.map((card) => (
           <SingleCard
             key={card.id}

@@ -83,3 +83,10 @@ export const memoryGames = [
   {title: "Trolls Two", src: "/img/home/memory_game_trollos_2.png", key: 5, cards: trollsTwoImages, position:"5", name: TROLLS_TWO },
 ]
 
+export const gamesList = [
+  { title: "Memory Games", src: "/img/cover/cover_a.png", key: 1, position: "1", games: memoryGames, name: "memory_games" },
+  { title: "Read and Write Games", src: "/img/cover/cover_b.png", key: 2, position: "2", games: memoryGames, name: "read_write_games" }
+]
+
+
+

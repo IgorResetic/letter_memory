@@ -1,16 +1,17 @@
 import React from "react";
 import { BrowserRouter, Route, Routes, useNavigate } from 'react-router-dom';
 import { memoryGames, frozenImages, trollsImages } from "../utils/constants";
-import "./Home.css";
+import MemoryGame from "./MemoryGame";
+import "./MemoryGameHelpers";
 import HomeRow from "../components/home_row/HomeRow"
 
-const Home = ( {games} ) => {
+const MemoryGameHome = ({ games }) => {
     const navigate = useNavigate()
 
-    var rowTitle = "Games"
+    var rowTitle = "Memory"
 
     const clickHandler = (name) => {
-        navigate('/'+ name)
+        navigate('/memory_games/'+ name)
     }
 
     return (
@@ -25,4 +26,4 @@ const Home = ( {games} ) => {
     )
 }
 
-export default Home;
+export default MemoryGameHome;

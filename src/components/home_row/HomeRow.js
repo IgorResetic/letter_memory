@@ -1,6 +1,6 @@
 import React from "react";
-import SingleItem from "../components/single_item/SingleItem";
-import useEventListener from "../utils/listeners/UseEventListener"
+import SingleItem from "../single_item/SingleItem";
+import useEventListener from "../../utils/listeners/UseEventListener"
 import './HomeRow.css';
 
 

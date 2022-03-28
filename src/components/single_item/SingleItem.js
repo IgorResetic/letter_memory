@@ -7,7 +7,6 @@ const SingleItem = ({item, handler}) => {
         handler(item.name)
     }
 
-    console.log(item)
     return(
         <div className="item">
             <img 
