@@ -9,8 +9,6 @@ const SingleCard = ({ card, handleChoice, flipped, disabled }) => {
         }
       };
 
-      console.log("SNGLE CARD")
- 
       return (
         <div className="card">
           <div className={flipped ? "flipped" : ""}>

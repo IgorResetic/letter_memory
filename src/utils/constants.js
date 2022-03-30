@@ -69,8 +69,17 @@ export const backImages = [
   { src: "/img/cover/cover_z.png", letter: "Z" },
 ];
 
-export const FROZEN = "Frozen_Memory_Game"
+export const letterImages = [
+  { src: "/img/letters/Upper_Letter_G.png", letter: "G" },
+  { src: "/img/letters/Lower_Letter_R.png", letter: "r" },
+  { src: "/img/letters/Lower_Letter_A.png", letter: "a" },
+  { src: "/img/letters/Lower_Letter_N.png", letter: "n" },
+  { src: "/img/letters/Lower_Letter_K.png", letter: "k" },
+  { src: "/img/letters/Lower_Letter_O.png", letter: "o" },
+]
+
 export const TROLLS = "Trolls_Memory_Game"
+export const FROZEN = "Frozen_Memory_Game"
 export const HELMET = "Helmet_Memory_Game"
 export const TROLLS_TWO = "Trolls_TwoMemory_Game"
 export const BERGENS = "Bergens_Memory_Game"

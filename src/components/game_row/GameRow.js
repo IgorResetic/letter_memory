@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import { getNames } from "../../read_write_game/ReadWriteHelper";
 import { backImages } from "../../utils/constants";
 import useEventListener from "../../utils/listeners/UseEventListener";
@@ -7,7 +8,8 @@ import './GameRow.css'
 
 const GameRow = ({ character }) => {
 
-    var letterIndex = 0
+    const [flippedLetter, setFlippedLetter] = useState(null)
+    const [letterIndex, setLetterIndex] = useState(0)
 
     // handle a choice
     const clickHandler = (character) => {
@@ -19,12 +21,16 @@ const GameRow = ({ character }) => {
     }
 
     const letterKeyHandler = ({ key }) => {
-        console.log("key hadnler: " + key.toUpperCase())
-        console.log(getNames(character.name)[letterIndex])
+        console.log("key: " + key + ":" + getNames(character.name)[letterIndex].letter)
         if (getNames(character.name)[letterIndex].letter === key.toUpperCase()) {
             console.log("TOČNO")
-            letterIndex++
+            setFlippedLetter(getNames(character.name)[letterIndex].letter)
+            console.log("END")
+            setLetterIndex(letterIndex + 1)
         }
+
+    
+        console.log("FINAL")
     }
 
     useEventListener("keydown", letterKeyHandler)
@@ -33,9 +39,10 @@ const GameRow = ({ character }) => {
         <div className="GameRow">
             <div className="show">
                 <div className="letter-cards">
-                    <SingleItem key={character.key} item={character} handler={clickHandler} />
+                    <SingleItem key={character.key} item={character} handler={clickHandler} flipped={false} />
                     {getNames(character.name).map((letter) => (
                         <SingleItem
+                            flipped={letter.letter == flippedLetter }
                             key={letter.key}
                             item={letter}
                             handler={letterClickHandler}

@@ -27,7 +27,7 @@ const HomeRow = ({ title, items, handler }) => {
             <h3 className="row-title">{title}</h3>
             <div className="row">
                 {items.map((item) => (
-                    <SingleItem key={item.key} item={item} handler={handleChoice}/>
+                    <SingleItem key={item.key} item={item} handler={handleChoice} flipped={false}/>
                 ))}
             </div>
         </div>

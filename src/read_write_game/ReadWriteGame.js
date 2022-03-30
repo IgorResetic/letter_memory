@@ -21,7 +21,6 @@ const ReadWriteGame = () => {
     }
 
     const handleKeyEntery = ({ key }) => {
-        console.log("Key" + key)
         var character = characters.find((obj) => {
             return obj.key == key
         })
@@ -41,9 +40,12 @@ const ReadWriteGame = () => {
     }
 
     const showLetters = () => {
-        if(choiceCharacter != null) {
-            return(
-                <GameRow character={choiceCharacter}/>
+        if (choiceCharacter != null) {
+            return (
+                <div className="delay-flippe">
+                    <GameRow character={choiceCharacter} />
+                </div>
+
             )
         }
     }
@@ -52,16 +54,19 @@ const ReadWriteGame = () => {
 
     return (
         <div className="ReadWrite">
-            <div className="item-row">
-                {characters.map((character) => (
-                    <div className={selected ? "selected" : ""} key={character.key}>
-                        <SingleItem key={character.key} item={character} handler={handleSelection} />
+                <div className={selected ? "selected" : ""}>
+                    <div className="item-row">
+                    {characters.map((character) => (
+                        <div className="item-cards" key={character.key}>
+                            <SingleItem key={character.key} item={character} handler={handleSelection} flipped={false} />
+                        </div>
+                    ))}
                     </div>
-                ))}
-            </div>
-            <div>
-                {showLetters() }
-            </div>
+
+                    <div className="letters">
+                        {showLetters()}
+                    </div>
+                </div>
         </div>
     )
     /*
@@ -76,3 +81,18 @@ const ReadWriteGame = () => {
 export default ReadWriteGame;
 
 //<GameRow character={character} selected={character == choiceCharacter}/>
+
+/*
+        <div className="ReadWrite">
+            <div className="item-row">
+                {characters.map((character) => (
+                    <div className={selected ? "selected" : ""} key={character.key}>
+                        <SingleItem key={character.key} item={character} handler={handleSelection} flipped={false} />
+                    </div>
+                ))}
+                <div className="letters">
+                    {showLetters()}
+                </div>
+            </div>
+        </div>
+*/

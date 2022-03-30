@@ -3,15 +3,29 @@
     margin: 40px auto;
 }
 .item-row {
-    width: 100%;
+    width: 1080px;
     margin-top: 40px;
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
   }
 
-.selected {
+.item-row .item-cards {
+    transition: all ease-in 0.3s;
+    transition-delay: 0.3s;
+}
+
+.selected .item-cards {
+    transform: rotateY(90deg);
+    transition-delay: 0s;
+}
+
+.item-row .letters {
     transform: rotateY(90deg);
     transition: all ease-in 0.3s;
 }
 
+.selected .letters {
+    transform: rotateY(0deg);
+    transition-delay: 0.3s;
+}
