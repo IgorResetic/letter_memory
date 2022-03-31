@@ -31,11 +31,13 @@ const MemoryGame= () => {
       navigate('/')
     }
 
+    console.log()
+
     var letterCard = cards.find((obj) => {
       return obj.back.letter === key.toUpperCase();
     });
     
-    if (letterCard && letterCard.back.letter !== currentLetter) {
+    if (letterCard && letterCard.back.letter !== currentLetter && !letterCard.matched) {
       setCurrentLetter(letterCard.back.letter);
       handleChoice(letterCard); 
     } 
@@ -50,8 +52,6 @@ const MemoryGame= () => {
     setCurrentLetter("")
 
     var images = getImages(name)
-    console.log("images" + name)
-    console.log(images)
 
     var selectedBackImages = Constants.backImages.slice(offset, offset + images.length * 2)
     var shuffledBack = selectedBackImages.sort(() => Math.random() - 0.5);
