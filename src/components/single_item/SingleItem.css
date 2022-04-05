@@ -1,5 +1,6 @@
 .item {
     position: relative;
+    margin: 16px
 }
 
 .item img {

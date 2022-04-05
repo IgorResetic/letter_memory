@@ -16,16 +16,19 @@
 }
 
 .selected .item-cards {
+    transition: transform 0.3s ease-out;
     transform: rotateY(90deg);
-    transition-delay: 0s;
+    height: 0;
 }
 
-.item-row .letters {
+.letters {
+    transition: transform 0.3s ease-out;
     transform: rotateY(90deg);
-    transition: all ease-in 0.3s;
+    height: 0;
 }
 
 .selected .letters {
+    transition: transform 0.3s ease-out;
     transform: rotateY(0deg);
     transition-delay: 0.3s;
 }

@@ -17,7 +17,6 @@ const MemoryGameHome = ({ games }) => {
     return (
         <div className="Home">
             <HomeRow
-                className="card-grid"
                 title={rowTitle} items={ games }
                 handler={clickHandler}
             />

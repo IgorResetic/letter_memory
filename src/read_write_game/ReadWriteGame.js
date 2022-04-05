@@ -3,6 +3,8 @@ import { useEffect, useState } from "react";
 import SingleItem from "../components/single_item/SingleItem"
 import useEventListener from "../utils/listeners/UseEventListener";
 import './ReadWriteGame.css';
+import { acctionImages, levelImages, trollsCharacrersImages } from "./ReadWriteGameConstants";
+import '../utils/style.css';
 
 var characters = [
     { key: 1, src: "/img/trolls/trolls_branch.png", name: "GRANKO", selected: false },
@@ -14,14 +16,15 @@ const ReadWriteGame = () => {
 
     const [choiceCharacter, setChoiceCharacter] = useState(null);
     const [selected, setSelected] = useState(false);
+    const [choiceImages, setChoiceImages] = useState(trollsCharacrersImages)
+    const [imagesIndex, setImagesIndex] = useState(0)
 
     const handleSelection = () => {
-        console.log("Item selected")
         setSelected(true)
     }
 
     const handleKeyEntery = ({ key }) => {
-        var character = characters.find((obj) => {
+        var character = choiceImages.find((obj) => {
             return obj.key == key
         })
 
@@ -29,25 +32,25 @@ const ReadWriteGame = () => {
             setChoiceCharacter(character)
             setSelected(true)
         }
+    }
 
-        // character.selected = true
-        /*
-        if(character != null) {
-            setChoiceCharacter(character)
-        }
-        */
-        console.log(character)
+    const handlerStartNewChoice = () => {
+        console.log("Start new choice")
+        setImagesIndex(1)
+        setSelected(false)
+        console.log("Image index: " + imagesIndex )
+        setChoiceImages(levelImages[imagesIndex + 1])
+        setChoiceCharacter(null)
     }
 
     const showLetters = () => {
+        console.log("choiceCharacter")
+        console.log(choiceCharacter)
         if (choiceCharacter != null) {
             return (
-                <div className="delay-flippe">
-                    <GameRow character={choiceCharacter} />
-                </div>
-
+                <GameRow character={choiceCharacter} handler={handlerStartNewChoice}/>
             )
-        }
+        } 
     }
 
     useEventListener("keydown", handleKeyEntery)
@@ -55,8 +58,8 @@ const ReadWriteGame = () => {
     return (
         <div className="ReadWrite">
                 <div className={selected ? "selected" : ""}>
-                    <div className="item-row">
-                    {characters.map((character) => (
+                    <div className="flew-row">
+                    {choiceImages.map((character) => (
                         <div className="item-cards" key={character.key}>
                             <SingleItem key={character.key} item={character} handler={handleSelection} flipped={false} />
                         </div>
@@ -79,20 +82,3 @@ const ReadWriteGame = () => {
 }
 
 export default ReadWriteGame;
-
-//<GameRow character={character} selected={character == choiceCharacter}/>
-
-/*
-        <div className="ReadWrite">
-            <div className="item-row">
-                {characters.map((character) => (
-                    <div className={selected ? "selected" : ""} key={character.key}>
-                        <SingleItem key={character.key} item={character} handler={handleSelection} flipped={false} />
-                    </div>
-                ))}
-                <div className="letters">
-                    {showLetters()}
-                </div>
-            </div>
-        </div>
-*/

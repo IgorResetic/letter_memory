@@ -1,5 +1,4 @@
 .GameRow {
-    max-width: 1080px;
     margin: 40px auto;
 }
 .item-row {
@@ -18,6 +17,14 @@
 .not-selected {
     transform: rotateY(90deg);
     transition: all ease-in 0.3s;
+}
+
+.game-row {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
 }
 
 .letter-cards{
