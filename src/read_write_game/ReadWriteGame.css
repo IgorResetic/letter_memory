@@ -1,14 +1,6 @@
 .ReadWrite {
-    max-width: 1080px;
-    margin: 40px auto;
+    margin: 0 auto;
 }
-.item-row {
-    width: 1080px;
-    margin-top: 40px;
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-  }
 
 .item-row .item-cards {
     transition: all ease-in 0.3s;
@@ -31,4 +23,26 @@
     transition: transform 0.3s ease-out;
     transform: rotateY(0deg);
     transition-delay: 0.3s;
+}
+
+.final-txt {
+    display: none;
+    font-size: 12rem;
+}
+
+.end-game .final-txt {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    min-height: 100vh;
+    width: 100vw;
+    color: wheat;
+    text-transform: lowercase;
+    margin: 0;
+}
+
+.end-game .flew-row {
+    display: none;
 }

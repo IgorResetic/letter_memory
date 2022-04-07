@@ -6,18 +6,14 @@ import './ReadWriteGame.css';
 import { acctionImages, levelImages, trollsCharacrersImages } from "./ReadWriteGameConstants";
 import '../utils/style.css';
 
-var characters = [
-    { key: 1, src: "/img/trolls/trolls_branch.png", name: "GRANKO", selected: false },
-    { key: 2, src: "/img/trolls/trolls_lala.png", name: "LALA", selected: false },
-    { key: 3, src: "/img/trolls/trolls_creek.png", name: "MIRO", selected: false }
-]
-
 const ReadWriteGame = () => {
 
     const [choiceCharacter, setChoiceCharacter] = useState(null);
     const [selected, setSelected] = useState(false);
     const [choiceImages, setChoiceImages] = useState(trollsCharacrersImages)
-    const [imagesIndex, setImagesIndex] = useState(0)
+    const [selectedPosition, setSelectedPosition] = useState(1)
+    const [finalSentence, setFinalSentece] = useState("")
+    const [isFinish, setIsFinish] = useState(false)
 
     const handleSelection = () => {
         setSelected(true)
@@ -30,16 +26,20 @@ const ReadWriteGame = () => {
 
         if (character != null) {
             setChoiceCharacter(character)
+            setSelectedPosition(key)
+            setFinalSentece(finalSentence + " " + character.name)
             setSelected(true)
         }
     }
 
     const handlerStartNewChoice = () => {
-        console.log("Start new choice")
-        setImagesIndex(1)
         setSelected(false)
-        console.log("Image index: " + imagesIndex )
-        setChoiceImages(levelImages[imagesIndex + 1])
+        if (choiceImages[selectedPosition - 1].next !== null) {
+            setChoiceImages(choiceImages[selectedPosition - 1].next)
+        } else {
+            console.log("END GAME: " + finalSentence)
+            setIsFinish(true)
+        }
         setChoiceCharacter(null)
     }
 
@@ -48,28 +48,33 @@ const ReadWriteGame = () => {
         console.log(choiceCharacter)
         if (choiceCharacter != null) {
             return (
-                <GameRow character={choiceCharacter} handler={handlerStartNewChoice}/>
+                <GameRow character={choiceCharacter} handler={handlerStartNewChoice} />
             )
-        } 
+        }
     }
 
     useEventListener("keydown", handleKeyEntery)
 
     return (
         <div className="ReadWrite">
+            <div className={isFinish ? "end-game" : ""}>
                 <div className={selected ? "selected" : ""}>
                     <div className="flew-row">
-                    {choiceImages.map((character) => (
-                        <div className="item-cards" key={character.key}>
-                            <SingleItem key={character.key} item={character} handler={handleSelection} flipped={false} />
-                        </div>
-                    ))}
+                        {choiceImages.map((character) => (
+                            <div className="item-cards" key={character.key}>
+                                <SingleItem key={character.key} item={character} handler={handleSelection} flipped={false} />
+                            </div>
+                        ))}
                     </div>
 
                     <div className="letters">
                         {showLetters()}
                     </div>
                 </div>
+                <div className="final-txt">
+                    {finalSentence}
+                </div>
+            </div>
         </div>
     )
     /*
