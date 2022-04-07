@@ -20,7 +20,7 @@ const MemoryGame= () => {
   const [choiceTwo, setChoiceTwo] = useState(null);
   const [disabled, setDisabled] = useState(false);
   const [currentLetter, setCurrentLetter] = useState("");
-  const [offset, setOffest] = useState(0);
+  const [offset, setOffest] = useState(3);
 
   const handler = ({ key }) => {
     if(key === " ") {
@@ -76,6 +76,10 @@ const MemoryGame= () => {
     choiceOne ? setChoiceTwo(card) : setChoiceOne(card);
   };
 
+  const setLetterOffset = (event) => {
+    setOffest(event.target.value)
+  }
+
   // compare two selected cards
   useEffect(() => {
     if (choiceOne && choiceTwo) {
@@ -117,7 +121,7 @@ const MemoryGame= () => {
       <h1>{getTitle(name)} Magic Match</h1>
       <div className="main-bar">
         <button className="button" onClick={shullfleCards}>New Game</button>
-        <input className="input" type="number" min="0" max="8" value={offset} onChange={e => setOffest(e.target.value)}></input>
+        <input className="input" type="number" min="0" max="8" value={offset} onChange={setLetterOffset}></input>
       </div>
 
       <div className="card-grid">
