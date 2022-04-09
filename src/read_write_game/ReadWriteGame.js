@@ -5,6 +5,7 @@ import useEventListener from "../utils/listeners/UseEventListener";
 import './ReadWriteGame.css';
 import { acctionImages, levelImages, trollsCharacrersImages } from "./ReadWriteGameConstants";
 import '../utils/style.css';
+import Sentece from "./Sentece";
 
 const ReadWriteGame = () => {
 
@@ -43,12 +44,30 @@ const ReadWriteGame = () => {
         setChoiceCharacter(null)
     }
 
+    const handlerStartNewGame = () => {
+        console.log("NEW GAME START")
+        setIsFinish(false)
+        setSelected(false)
+        setChoiceImages(trollsCharacrersImages)
+        setFinalSentece("")
+
+    }
+
     const showLetters = () => {
         console.log("choiceCharacter")
         console.log(choiceCharacter)
         if (choiceCharacter != null) {
             return (
                 <GameRow character={choiceCharacter} handler={handlerStartNewChoice} />
+            )
+        }
+    }
+
+    const showFinalSentece = () => {
+        console.log("SHOW FINAL")
+        if(choiceCharacter == null) {
+            return(
+                <Sentece sentece={finalSentence} newGame={handlerStartNewGame}/>
             )
         }
     }
@@ -72,7 +91,7 @@ const ReadWriteGame = () => {
                     </div>
                 </div>
                 <div className="final-txt">
-                    {finalSentence}
+                    {showFinalSentece()}
                 </div>
             </div>
         </div>
