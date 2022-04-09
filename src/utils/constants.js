@@ -65,6 +65,15 @@ export const hotelTransylvaniaImages = [
   { src: "/img/hotel_transylvania/kvazi.png", matched: false },  
 ]
 
+export const segertHlapicImages = [
+  { src: "/img/segert_hlapic/gita.png", matched: false },
+  { src: "/img/segert_hlapic/bundas.png", matched: false },
+  { src: "/img/segert_hlapic/hlapic.png", matched: false },
+  { src: "/img/segert_hlapic/majstor.png", matched: false },
+  { src: "/img/segert_hlapic/majstorica.png", matched: false },
+  { src: "/img/segert_hlapic/stakor.png", matched: false },
+]
+
 
 export const backImages = [
   { src: "/img/cover/cover_a.png", letter: "A" },
@@ -101,6 +110,7 @@ export const TROLLS_TWO = "Trolls_TwoMemory_Game"
 export const BERGENS = "Bergens_Memory_Game"
 export const PEPPA_PIG = "Peppa_Pig_Memory_Game"
 export const HOTEL_TRANSYLVANIA = "Hotel_Transylvania_Memory_Game"
+export const SEGERT_HLAPIC = "Segert_HlapicsegertHlapicImages"
 
 export const memoryGames = [
   {title: "Frozen", src: "/img/home/memory_game_frozen.png", key: 1, cards: frozenImages, position:"1", name: FROZEN },
@@ -110,5 +120,6 @@ export const memoryGames = [
   {title: "Trolls Two", src: "/img/home/memory_game_trollos_2.png", key: 5, cards: trollsTwoImages, position:"5", name: TROLLS_TWO },
   {title: "Peppa pig", src: "/img/home/memory_game_peppa.png", key: 6, cards: peppaPigImages, position:"6", name: PEPPA_PIG },
   {title: "Hotel Transylvania", src: "/img/home/memory_game_hotel_transylvania.png", key: 7, cards: hotelTransylvaniaImages, position:"7", name: HOTEL_TRANSYLVANIA },
+  {title: "Segert Hlapic", src: "/img/home/memory_game_segert_hlapic.png", key: 8, cards: segertHlapicImages, position:"8", name: SEGERT_HLAPIC },
 ]
 
