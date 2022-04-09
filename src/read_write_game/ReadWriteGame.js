@@ -65,7 +65,7 @@ const ReadWriteGame = () => {
 
     const showFinalSentece = () => {
         console.log("SHOW FINAL")
-        if(choiceCharacter == null) {
+        if(isFinish) {
             return(
                 <Sentece sentece={finalSentence} newGame={handlerStartNewGame}/>
             )

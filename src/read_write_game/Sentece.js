@@ -12,7 +12,6 @@ const Sentece = ({ sentece, newGame }) => {
         console.log("Test_ ##########  " + words.length + " ####### " + words + " SENTECE" + sentece + "active: " + activeWord)
         if (key === " ") {
             setActiveWord(activeWord + 1)
-
             if(activeWord == words.length) {
                 console.log("Start new game now")
                 newGame()
