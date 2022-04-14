@@ -15,6 +15,7 @@ const ReadWriteGame = () => {
     const [selectedPosition, setSelectedPosition] = useState(1)
     const [finalSentence, setFinalSentece] = useState("")
     const [isFinish, setIsFinish] = useState(false)
+    const [gameStarted, setGameStarted] = useState(true)
 
     const handleSelection = () => {
         setSelected(true)
@@ -25,7 +26,8 @@ const ReadWriteGame = () => {
             return obj.key == key
         })
 
-        if (character != null) {
+        if (character != null && !selected) {
+            setGameStarted(false)
             setChoiceCharacter(character)
             setSelectedPosition(key)
             setFinalSentece(finalSentence + " " + character.name)
