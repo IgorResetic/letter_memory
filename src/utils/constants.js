@@ -43,13 +43,52 @@ export const trollsTwoImages = [
   { src: "/img/trollos_2/prinzea_brigita.png", matched: false },
 ]
 
+export const peppaPigImages = [
+  { src: "/img/peppa_pig/peppa_pig.png", matched: false },
+  { src: "/img/peppa_pig/elephent.png", matched: false },
+  { src: "/img/peppa_pig/george.png", matched: false },
+  { src: "/img/peppa_pig/momy_pig.png", matched: false },
+  { src: "/img/peppa_pig/daddy_pig.png", matched: false },
+  { src: "/img/peppa_pig/cat.png", matched: false },
+  { src: "/img/peppa_pig/suzy_sheep.png", matched: false },
+  { src: "/img/peppa_pig/gerald.png", matched: false },
+]
+
+export const hotelTransylvaniaImages = [
+  { src: "/img/hotel_transylvania/dracula.png", matched: false },
+  { src: "/img/hotel_transylvania/frank.png", matched: false },
+  { src: "/img/hotel_transylvania/ivek.png", matched: false },
+  { src: "/img/hotel_transylvania/little_wolf.png", matched: false },
+  { src: "/img/hotel_transylvania/maja.png", matched: false },
+  { src: "/img/hotel_transylvania/mumija.png", matched: false },
+  { src: "/img/hotel_transylvania/vuki.png", matched: false },  
+  { src: "/img/hotel_transylvania/kvazi.png", matched: false },  
+]
+
+export const segertHlapicImages = [
+  { src: "/img/segert_hlapic/gita.png", matched: false },
+  { src: "/img/segert_hlapic/bundas.png", matched: false },
+  { src: "/img/segert_hlapic/hlapic.png", matched: false },
+  { src: "/img/segert_hlapic/majstor.png", matched: false },
+  { src: "/img/segert_hlapic/majstorica.png", matched: false },
+  { src: "/img/segert_hlapic/stakor.png", matched: false },
+]
+
+export const vlakUSnjeguImages = [
+  { src: "/img/vlak_u_snjegu/draga.png", matched: false },
+  { src: "/img/vlak_u_snjegu/kondukter.png", matched: false },
+  { src: "/img/vlak_u_snjegu/ljuban.png", matched: false },
+  { src: "/img/vlak_u_snjegu/marica.png", matched: false },
+  { src: "/img/vlak_u_snjegu/pero.png", matched: false },
+  { src: "/img/vlak_u_snjegu/profesor.png", matched: false },
+]
 
 export const backImages = [
   { src: "/img/cover/cover_a.png", letter: "A" },
   { src: "/img/cover/cover_b.png", letter: "B" },
   { src: "/img/cover/cover_c.png", letter: "C" },
   { src: "/img/cover/cover_č.png", letter: "Č" },
-  { src: "/img/cover/cover_ć.png", letter: "Ć" },
+  //{ src: "/img/cover/cover_ć.png", letter: "Ć" },
   { src: "/img/cover/cover_d.png", letter: "D" },
   { src: "/img/cover/cover_đ.png", letter: "Đ" },
   { src: "/img/cover/cover_e.png", letter: "E" },
@@ -71,6 +110,7 @@ export const backImages = [
   { src: "/img/cover/cover_u.png", letter: "U" },
   { src: "/img/cover/cover_v.png", letter: "V" },
   { src: "/img/cover/cover_z.png", letter: "Z" },
+  { src: "/img/cover/cover_ž.png", letter: "Ž" },
 ];
 
 export const letterImages = [
@@ -87,6 +127,10 @@ export const FROZEN = "Frozen_Memory_Game"
 export const HELMET = "Helmet_Memory_Game"
 export const TROLLS_TWO = "Trolls_TwoMemory_Game"
 export const BERGENS = "Bergens_Memory_Game"
+export const PEPPA_PIG = "Peppa_Pig_Memory_Game"
+export const HOTEL_TRANSYLVANIA = "Hotel_Transylvania_Memory_Game"
+export const SEGERT_HLAPIC = "Segert_HlapicsegertHlapicImages"
+export const VLAK_U_SNJEGU = "Vlak_U_Snjegu_Memory_Game"
 
 export const memoryGames = [
   {title: "Frozen", src: "/img/home/memory_game_frozen.png", key: 1, cards: frozenImages, position:"1", name: FROZEN },
@@ -94,6 +138,10 @@ export const memoryGames = [
   {title: "Trolls", src: "/img/home/memory_game_trolls.png", key: 3, cards: trollsImages, position:"3", name: TROLLS },
   {title: "Bergens", src: "/img/home/memory_game_bergens.png", key: 4, cards: bergensImages, position:"4", name: BERGENS},
   {title: "Trolls Two", src: "/img/home/memory_game_trollos_2.png", key: 5, cards: trollsTwoImages, position:"5", name: TROLLS_TWO },
+  {title: "Peppa pig", src: "/img/home/memory_game_peppa.png", key: 6, cards: peppaPigImages, position:"6", name: PEPPA_PIG },
+  {title: "Hotel Transylvania", src: "/img/home/memory_game_hotel_transylvania.png", key: 7, cards: hotelTransylvaniaImages, position:"7", name: HOTEL_TRANSYLVANIA },
+  {title: "Segert Hlapic", src: "/img/home/memory_game_segert_hlapic.png", key: 8, cards: segertHlapicImages, position:"8", name: SEGERT_HLAPIC },
+  {title: "Vlak u snjegu", src: "/img/home/memory_game_vlak_u_snjegu.png", key: 9, cards: vlakUSnjeguImages, position:"9", name: VLAK_U_SNJEGU },
 ]
 
 export const gamesList = [
