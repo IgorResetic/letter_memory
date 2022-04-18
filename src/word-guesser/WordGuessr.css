@@ -1,0 +1,38 @@
+* {
+    margin: 0;
+    padding: 0;
+  }
+
+.WordGuesser {
+    margin: 0 au;
+}
+
+.guess-container {
+    display: none;
+}
+
+.end-writeing .guess-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.guess {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+}
+
+.end-writeing .write {
+    display: none;
+}
+
+.flew-row {
+    flex-basis: auto;
+}   
+
+.guess-word {
+    color: wheat;
+    text-transform: lowercase;
+    font-size: 17rem;
+    margin-bottom: 64px;
+}

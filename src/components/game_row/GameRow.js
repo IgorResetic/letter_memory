@@ -13,6 +13,9 @@ const GameRow = ({ character, handler }) => {
     const [letterIndex, setLetterIndex] = useState(0)
     const [letters, setLetters] = useState([])
 
+    console.log("STARRT GAME ROW: " + character.name)
+    console.log("letterIndex: " + letterIndex)
+
     // handle a choice
     const clickHandler = (character) => {
         console.log("handle choice")
@@ -25,6 +28,8 @@ const GameRow = ({ character, handler }) => {
     const letterKeyHandler = ({ key }) => {
         if ((letterIndex === letters.length) && key === " ") {
             console.log("Start new action")
+            setLetters([])
+            setLetterIndex(0)
             handler()
         }
 
@@ -51,7 +56,7 @@ const GameRow = ({ character, handler }) => {
     useEventListener("keydown", letterKeyHandler)
 
     useEffect (() => {
-        console.log("USE EFFECT")
+        console.log("USE EFFECT: " + character.name)
         setLetters(getNames(character.name))
     }, [character])
 

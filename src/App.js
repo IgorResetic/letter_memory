@@ -5,6 +5,7 @@ import { memoryGames, frozenImages, gamesList } from "./utils/constants";
 import MemoryGameHome from './memory_game/MemoryGameHome';
 import Home from './home/Home';
 import ReadWriteGame from './read_write_game/ReadWriteGame';
+import WordGuessr from './word-guesser/WordGuessr';
 
 const App = () => {
     return (
@@ -15,6 +16,7 @@ const App = () => {
                     <Route path="/memory_games" element={<MemoryGameHome games={memoryGames} />} />
                     <Route path="/memory_games/:name" element={<MemoryGame />} />
                     <Route path="/read_write_games" element={<ReadWriteGame />}/>
+                    <Route path="/word_guess_games" element={<WordGuessr />}/>
                 </Routes>
             </div>
         </BrowserRouter>
