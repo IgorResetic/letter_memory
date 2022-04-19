@@ -5,82 +5,95 @@ import useEventListener from "../../utils/listeners/UseEventListener";
 import SingleCard from "../single_card/SingleCard";
 import SingleItem from "../single_item/SingleItem";
 import SingleLetter from "../single_letter/SingleLetter";
-import './GameRow.css'
+import "./GameRow.css";
 
 const GameRow = ({ character, handler }) => {
+    const [flippedLetter, setFlippedLetter] = useState(null);
+    const [letterIndex, setLetterIndex] = useState(0);
+    const [letters, setLetters] = useState([]);
+    const [showWord, setShowWord] = useState(false)
+    const [spaceCoint, setSpaceCout] = useState(0)
 
-    const [flippedLetter, setFlippedLetter] = useState(null)
-    const [letterIndex, setLetterIndex] = useState(0)
-    const [letters, setLetters] = useState([])
-
-    console.log("STARRT GAME ROW: " + character.name)
-    console.log("letterIndex: " + letterIndex)
+    console.log("STARRT GAME ROW: " + character.name);
+    console.log("letterIndex: " + letterIndex);
 
     // handle a choice
     const clickHandler = (character) => {
-        console.log("handle choice")
+        console.log("handle choice");
     };
 
     const letterClickHandler = () => {
-        console.log("Letter clicked")
-    }
+        console.log("Letter clicked");
+    };
 
     const letterKeyHandler = ({ key }) => {
-        if ((letterIndex === letters.length) && key === " ") {
-            console.log("Start new action")
-            setLetters([])
-            setLetterIndex(0)
-            handler()
+        console.log("Key: " + key)
+        if (letterIndex === letters.length && key === " " && !showWord){
+            setShowWord(true)
+
+        } else if(letterIndex === letters.length && key === " " && showWord) {
+            setShowWord(false)
+            setLetters([]);
+            setLetterIndex(0);
+            handler();
         }
 
-        var card = letters[letterIndex]
+        console.log("AFTER: " + spaceCoint + " : " + showWord)
+        var card = letters[letterIndex];
         if (card.letter === key.toUpperCase()) {
-            console.log("TOČNO")
+            console.log("TOČNO");
             setLetters((prevLetters) => {
                 return prevLetters.map((letter) => {
-                    if(letter.key === card.key) {
+                    if (letter.key === card.key) {
                         return { ...letter, select: true };
                     } else {
-                        return letter
+                        return letter;
                     }
-                })
-            })
-            setFlippedLetter(getNames(character.name)[letterIndex].letter)
-            console.log("END")
-            setLetterIndex(letterIndex + 1)    
+                });
+            });
+            setFlippedLetter(getNames(character.name)[letterIndex].letter);
+            console.log("END");
+            setLetterIndex(letterIndex + 1);
         }
+        console.log("FINAL");
+    };
 
-        console.log("FINAL")
-    }
+    useEventListener("keydown", letterKeyHandler);
 
-    useEventListener("keydown", letterKeyHandler)
-
-    useEffect (() => {
-        console.log("USE EFFECT: " + character.name)
-        setLetters(getNames(character.name))
-    }, [character])
+    useEffect(() => {
+        console.log("USE EFFECT: " + character.name);
+        setLetters(getNames(character.name));
+    }, [character]);
 
     return (
         <div className="GameRow">
             <div className="show">
                 <div className="game-row">
-                    <SingleItem className="char-img" key={character.key} item={character} handler={clickHandler} flipped={false} />
-                    <div className="letter-cards">
-                    {letters.map((letter) => (
-                        <SingleLetter
-                            key={letter.key}
-                            card={letter}
-                            handler={letterClickHandler}
-                            flipped={letter.letter == flippedLetter && letter.select}
-                            disabled={false}
-                        />
-                    ))}
+                    <SingleItem
+                        className="char-img"
+                        key={character.key}
+                        item={character}
+                        handler={clickHandler}
+                        flipped={false}
+                    />
+                    <div className={showWord ? "show-final-word" : ""}>
+                        <div className="letter-cards">
+                            {letters.map((letter) => (
+                                <SingleLetter
+                                    key={letter.key}
+                                    card={letter}
+                                    handler={letterClickHandler}
+                                    flipped={letter.letter == flippedLetter && letter.select}
+                                    disabled={false}
+                                />
+                            ))}
+                        </div>
+                        <div className="guess-word-final">{character.name}</div>
                     </div>
-
                 </div>
             </div>
         </div>
-    )
-}
+    );
+};
 
 export default GameRow;

@@ -12,7 +12,6 @@ const WordGuessr = () => {
     const [selected, setSelected] = useState(false);
     const [currentItem, setCurrentItem] = useState(null)
 
-
     const handlerStartNewCharacter = () => {
         if (index !== vlakUSnjeguImages.length - 1) {
             console.log("END GAME");
@@ -70,7 +69,9 @@ const WordGuessr = () => {
         <div className="WordGuesser">
             <div className={selected ? "end-writeing" : ""}>
                 <div className="write">
+                    <div>
                     <GameRow character={choiceImage} handler={handlerStartNewCharacter} />
+                    </div>
                 </div>
                 <div className="guess-container ">
                     <div className="guess-word">{choiceImage.name}</div>

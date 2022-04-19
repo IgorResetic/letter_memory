@@ -28,6 +28,7 @@
 }
 
 .letter-cards{
+    display: block;
     width: 100%;
     display: flex;
     justify-content: center;
@@ -37,4 +38,20 @@
 .show {
     transform: rotateY(0deg);
     transition: all ease-in 0.3s;
+}
+
+.guess-word-final {
+    display: none;
+}
+
+.show-final-word .guess-word-final {
+    display: block;
+    color: wheat;
+    text-transform: lowercase;
+    font-size: 17rem;
+    margin-bottom: 64px;
+}
+
+.show-final-word .letter-cards {
+    display: none;
 }
