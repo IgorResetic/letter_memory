@@ -83,6 +83,17 @@ export const vlakUSnjeguImages = [
   { src: "/img/vlak_u_snjegu/profesor.png", matched: false },
 ]
 
+export const lionKingImages = [
+  { src: "/img/lion_king/hijena.png", matched: false },
+  { src: "/img/lion_king/mumfasa.png", matched: false },
+  { src: "/img/lion_king/nala.png", matched: false },
+  { src: "/img/lion_king/pumba_and_timon.png", matched: false },
+  { src: "/img/lion_king/rafiki.png", matched: false },
+  { src: "/img/lion_king/scar.png", matched: false },
+  { src: "/img/lion_king/simba.png", matched: false },
+  { src: "/img/lion_king/zazu.png", matched: false }
+]
+
 export const backImages = [
   { src: "/img/cover/cover_a.png", letter: "A" },
   { src: "/img/cover/cover_b.png", letter: "B" },
@@ -120,10 +131,11 @@ export const PEPPA_PIG = "Peppa_Pig_Memory_Game"
 export const HOTEL_TRANSYLVANIA = "Hotel_Transylvania_Memory_Game"
 export const SEGERT_HLAPIC = "Segert_HlapicsegertHlapicImages"
 export const VLAK_U_SNJEGU = "Vlak_U_Snjegu_Memory_Game"
+export const LION_KING = "Lion_King_Memory_Game"
 
 export const memoryGames = [
   {title: "Frozen", src: "/img/home/memory_game_frozen.png", key: 1, cards: frozenImages, position:"1", name: FROZEN },
-  {title: "Helmet", src: "/img/home/memory_game_helmet.png", key: 2, cards: helmetImages, position:"2", name: HELMET },
+  {title: "Lion King", src: "/img/home/memory_game_lion_king.png", key: 2, cards: lionKingImages, position:"2", name: LION_KING },
   {title: "Trolls", src: "/img/home/memory_game_trolls.png", key: 3, cards: trollsImages, position:"3", name: TROLLS },
   {title: "Bergens", src: "/img/home/memory_game_bergens.png", key: 4, cards: bergensImages, position:"4", name: BERGENS},
   {title: "Trolls Two", src: "/img/home/memory_game_trollos_2.png", key: 5, cards: trollsTwoImages, position:"5", name: TROLLS_TWO },
