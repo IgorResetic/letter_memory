@@ -17,3 +17,8 @@
 .img-front {
     align-self: baseline;
 }
+
+.flipped-word {
+    transform: rotateY(90deg);
+    transition-delay: 0s;
+}

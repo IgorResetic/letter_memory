@@ -16,15 +16,17 @@ const SelectionCard = ({ item, flipped, handler }) => {
 
   return (
     <div className="selection-item">
-      <div className="selection-card">
-        <div className="selection-number">{item.position}</div>
-        <div className="img-front">
-          <img
-            className="front"
-            src={item.src}
-            alt="card item"
-            onClick={handleClick}
-          />
+      <div className={flipped ? "flipped-word" : ""}>
+        <div className="selection-card">
+          <div className="selection-number">{item.position}</div>
+          <div className="img-front">
+            <img
+              className="front"
+              src={item.src}
+              alt="card item"
+              onClick={handleClick}
+            />
+          </div>
         </div>
       </div>
     </div>
