@@ -40,22 +40,27 @@ const WordGuessr = () => {
 
     const keyDownHandler = ({ key }) => {
         if (key === choiceImage.position && selected) {
-            var newIndex = index
+            var newIndex = index + 1
             setCurrentItem(newIndex)
 
-            setIndex(newIndex + 1)
+            setIndex(newIndex)
             setChoiceImage(familyImages[newIndex])
 
             setFlippedKey(key)
             setFlipped(true)
 
+            /*
             console.log("length: " + familyImages.length + "index: " + newIndex)
             if(newIndex === familyImages.length) {
-                console.log("#############################################")
+                console.log("length: #############################################")
                 setIndex(0)
                 setChoiceImage(familyImages[0])
-                setSelected(true)
+                newIndex = 0
+                setFlipped(false)
+                setFlippedKey(null)
+                setSelected(false)
             }
+            */
         }
     }
 
@@ -82,14 +87,22 @@ const WordGuessr = () => {
         })
     }, [flipped])
 
+/*
     useEffect(() => {
         if(index === familyImages.length) {
-            console.log(" $$$$$$$$$$$$$$$$$$$$$$$ ")
-            setChoiceImage(familyImages[0])
-            setIndex(0)
+            setChoiceImage(familyImages[0]);
+            setIndex(0);
+            setFlipped(false);
+            setFlippedKey(null);
             setSelected(true);
+            setFinalImages((prevImages) => {
+                return prevImages.map((image) => {
+                    return  {...image, match: false}
+                })
+            })
         }
     }, [index])
+    */
 
     return (
         <div className="WordGuesser">
@@ -109,7 +122,8 @@ const WordGuessr = () => {
                                     className='card-item'
                                     item={character}
                                     handler={guessGameHandler}
-                                    flipped={flippedKey == character.position || character.match}
+                                    //flipped={flippedKey == character.position || character.match}
+                                    flipped={false}
                                 />
                             </div>
                         ))}
