@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { familyImages } from "./WordGUessrConstants";
+import { familyImages, resultImages } from "./WordGUessrConstants";
 import GameRow from "../components/game_row/GameRow";
 import useEventListener from "../utils/listeners/UseEventListener";
 import "./WordGuessr.css";
@@ -16,6 +16,9 @@ const WordGuessr = () => {
     const [flippedKey, setFlippedKey] = useState(null)
     const [finalImages, setFinalImages] = useState(familyImages)
     const [position, setPosition] = useState(0)
+    const [result, setResult] = useState(resultImages[1])
+    const [pressKey, setPressKey] = useState(null)
+    const [guessed, setGuessed] = useState(false)
      // var radnomSet = randomInts(3, 2)
 
      
@@ -28,7 +31,7 @@ const WordGuessr = () => {
             setIndex(newIndex);
         } else {
             console.log("GAME ENDED START WORD GUESS");
-            setChoiceImage(familyImages[0])
+            setChoiceImage(familyImages[1])
             setIndex(0)
             setSelected(true);
         }
@@ -39,15 +42,30 @@ const WordGuessr = () => {
     };
 
     const keyDownHandler = ({ key }) => {
-        if (key === choiceImage.position && selected) {
-            var newIndex = index + 1
+        if(key === " " && guessed) {
+            setPressKey(null)
+            var newIndex = getRandomInt(2)
             setCurrentItem(newIndex)
 
             setIndex(newIndex)
             setChoiceImage(familyImages[newIndex])
-
-            setFlippedKey(key)
+            setGuessed(false);
+        }
+        setPressKey(key)
+        if (key === choiceImage.position && selected) {
             setFlipped(true)
+            /*
+            var newIndex = getRandomInt(2)
+            setCurrentItem(newIndex)
+
+            setIndex(newIndex)
+            setChoiceImage(familyImages[newIndex])
+            */
+            setResult(resultImages[0])
+            setGuessed(true)
+
+            // setFlippedKey(key)
+            // setFlipped(true)
 
             /*
             console.log("length: " + familyImages.length + "index: " + newIndex)
@@ -61,7 +79,25 @@ const WordGuessr = () => {
                 setSelected(false)
             }
             */
+        } else {
+            setResult(resultImages[1])
         }
+        console.log("!!!!!!!!!!RESULT: " + result.name)
+
+    }
+
+    function getRandomInt(max) {
+        var random = Math.floor(Math.random() * max)
+
+        if(currentItem != null && random == currentItem) {
+            if(random == 2) {
+                random = random - 1; 
+            } else {
+                random = random + 1;
+            }
+        }
+
+        return random;
     }
 
     function myRandomInts(quantity, max){
@@ -73,8 +109,9 @@ const WordGuessr = () => {
       return(arr)
       }
 
-    useEventListener("keydown", keyDownHandler)
+    useEventListener("keyup", keyDownHandler)
 
+    /*
     useEffect(() => {
         setFinalImages((prevImages) => {
             return prevImages.map((image) => {
@@ -86,6 +123,58 @@ const WordGuessr = () => {
             })
         })
     }, [flipped])
+
+
+    useEffect(() => {
+        setFinalImages((prevImages) => {
+            return prevImages.map((image) => {
+                if(image.position === pressKey) {
+                    // return {...image, match: true };
+                    
+                    if(pressKey == choiceImage.key) {
+                        return {...image, match: true };
+                    } else {
+                        return {...image, match: true };
+                    }
+                    
+                } 
+            })
+        })
+    }, [pressKey])
+        useEffect(() => {
+        setFinalImages((prevImages) => {
+            return prevImages.map((image) => {
+                if(image.position === pressKey) {
+                    return {...image, match: true };
+                } 
+            })
+        })
+    }, [pressKey])
+    */
+
+
+    useEffect(() => {
+        setFinalImages((prevImages) => {
+            return prevImages.map((image) => {
+                var matchRes = {...image, match: true };
+                
+                if(pressKey == image.position) {
+                    return {...image, match: true };
+                } else {
+                    return {...image, match: false };
+                }
+                /*
+               
+                if(pressKey == choiceImage.key) {
+                    return {...matchRes, match: true };
+                } else {
+                    return {...matchRes, match: true };
+                }
+                */
+            })
+        })
+    }, [pressKey])
+
 
 /*
     useEffect(() => {
@@ -123,7 +212,9 @@ const WordGuessr = () => {
                                     item={character}
                                     handler={guessGameHandler}
                                     //flipped={flippedKey == character.position || character.match}
-                                    flipped={false}
+                                    flipped={pressKey != null && (character.key == pressKey || character.match) }
+                                    // flipped={character.res != null}
+                                    result={result}
                                 />
                             </div>
                         ))}

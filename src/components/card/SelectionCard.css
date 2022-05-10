@@ -18,7 +18,23 @@
     align-self: baseline;
 }
 
-.flipped-word {
+.front-img {
+    transition: all ease-in 0.3s;
+    transition-delay: 0.3s;
+}
+
+.back-img {
+    transform: rotateY(90deg);
+    transition: all ease-in 0.3s;
+}
+
+.flipped-word .back-img {
+    transform: rotateY(0deg);
+    transition-delay: 0.3s;
+}
+
+
+.flipped-word .front-img {
     transform: rotateY(90deg);
     transition-delay: 0s;
 }

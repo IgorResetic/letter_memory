@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import "./SelectionCard.css";
 
-const SelectionCard = ({ item, flipped, handler }) => {
+const SelectionCard = ({ item, flipped, handler, result }) => {
   const [isFlipped, setIsFlipped] = useState(false);
 
   useEffect(() => {
@@ -16,18 +16,19 @@ const SelectionCard = ({ item, flipped, handler }) => {
 
   return (
     <div className="selection-item">
-      <div className={flipped ? "flipped-word" : ""}>
         <div className="selection-card">
           <div className="selection-number">{item.position}</div>
           <div className="img-front">
-            <img
-              className="front"
-              src={item.src}
-              alt="card item"
-              onClick={handleClick}
-            />
+            <div className={flipped ? "flipped-word" : ""}>
+              <img
+                className="front-img"
+                src={item.src}
+                alt="card item"
+                onClick={handleClick}
+              />
+              <img className="back-img" src={result.src} alt="result back" />
+            </div>
           </div>
-        </div>
       </div>
     </div>
   );
