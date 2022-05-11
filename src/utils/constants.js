@@ -170,9 +170,9 @@ export const memoryGames = [
 ]
 
 export const gamesList = [
-  { title: "Memory Games", src: "/img/cover/cover_a.png", key: 1, position: "1", games: memoryGames, name: "memory_games" },
-  { title: "Read and Write Games", src: "/img/cover/cover_b.png", key: 2, position: "2", games: memoryGames, name: "read_write_games" },
-  { title: "Word guess game", src: "/img/cover/cover_c.png", key: 3, position: "3", games: memoryGames, name: "word_guess_games" }
+  { title: "Memory Games", src: "/img/start_page/memory_games.png", key: 1, position: "1", games: memoryGames, name: "memory_games" },
+  { title: "Read and Write Games", src: "/img/start_page/reading_games.png", key: 2, position: "2", games: memoryGames, name: "read_write_games" },
+  { title: "Word guess game", src: "/img/start_page/reading_words_game.png", key: 3, position: "3", games: memoryGames, name: "word_guess_games" }
   
 ]
 
