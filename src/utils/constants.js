@@ -94,6 +94,17 @@ export const lionKingImages = [
   { src: "/img/lion_king/zazu.png", matched: false }
 ]
 
+export const trnoruzicaImages = [
+  { src: "/img/trnoruzica/aurora.png", matched: false },
+  { src: "/img/trnoruzica/crvena_vila.png", matched: false },
+  { src: "/img/trnoruzica/filip.png", matched: false },
+  { src: "/img/trnoruzica/suncica.png", matched: false },
+  { src: "/img/trnoruzica/trnoruzica_one.png", matched: false },
+  { src: "/img/trnoruzica/trnoruzica_two.png", matched: false },
+  { src: "/img/trnoruzica/zelena_vila.png", matched: false },
+  { src: "/img/trnoruzica/zlurada.png", matched: false },
+]
+
 export const backImages = [
   { src: "/img/cover/cover_a.png", letter: "A" },
   { src: "/img/cover/cover_b.png", letter: "B" },
@@ -132,13 +143,15 @@ export const HOTEL_TRANSYLVANIA = "Hotel_Transylvania_Memory_Game"
 export const SEGERT_HLAPIC = "Segert_HlapicsegertHlapicImages"
 export const VLAK_U_SNJEGU = "Vlak_U_Snjegu_Memory_Game"
 export const LION_KING = "Lion_King_Memory_Game"
+export const TRNORUZICA = "Trnoruzica"
 
 export const memoryGames = [
   {title: "Frozen", src: "/img/home/memory_game_frozen.png", key: 1, cards: frozenImages, position:"1", name: FROZEN },
   {title: "Lion King", src: "/img/home/memory_game_lion_king.png", key: 2, cards: lionKingImages, position:"2", name: LION_KING },
   {title: "Trolls", src: "/img/home/memory_game_trolls.png", key: 3, cards: trollsImages, position:"3", name: TROLLS },
   {title: "Bergens", src: "/img/home/memory_game_bergens.png", key: 4, cards: bergensImages, position:"4", name: BERGENS},
-  {title: "Trolls Two", src: "/img/home/memory_game_trollos_2.png", key: 5, cards: trollsTwoImages, position:"5", name: TROLLS_TWO },
+  //{title: "Trolls Two", src: "/img/home/memory_game_trollos_2.png", key: 5, cards: trollsTwoImages, position:"5", name: TROLLS_TWO },
+  {title: "Trnoruzica", src: "/img/home/memory_game_trnoruzica.png", key: 5, cards: trnoruzicaImages, position:"5", name: TRNORUZICA },
   {title: "Peppa pig", src: "/img/home/memory_game_peppa.png", key: 6, cards: peppaPigImages, position:"6", name: PEPPA_PIG },
   {title: "Hotel Transylvania", src: "/img/home/memory_game_hotel_transylvania.png", key: 7, cards: hotelTransylvaniaImages, position:"7", name: HOTEL_TRANSYLVANIA },
   {title: "Segert Hlapic", src: "/img/home/memory_game_segert_hlapic.png", key: 8, cards: segertHlapicImages, position:"8", name: SEGERT_HLAPIC },

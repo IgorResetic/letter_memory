@@ -1,4 +1,4 @@
-import { BERGENS, bergensImages, FROZEN, frozenImages, HELMET, helmetImages, hotelTransylvaniaImages, HOTEL_TRANSYLVANIA, lionKingImages, LION_KING, memoryGames, peppaPigImages, PEPPA_PIG, segertHlapicImages, SEGERT_HLAPIC, TROLLS, trollsImages, trollsTwoImages, TROLLS_TWO, vlakUSnjeguImages, VLAK_U_SNJEGU } from "../utils/constants"
+import { BERGENS, bergensImages, FROZEN, frozenImages, HELMET, helmetImages, hotelTransylvaniaImages, HOTEL_TRANSYLVANIA, lionKingImages, LION_KING, memoryGames, peppaPigImages, PEPPA_PIG, segertHlapicImages, SEGERT_HLAPIC, TRNORUZICA, trnoruzicaImages, trnozuricaImages, TROLLS, trollsImages, trollsTwoImages, TROLLS_TWO, vlakUSnjeguImages, VLAK_U_SNJEGU } from "../utils/constants"
 
 
 export const getImages = (paramName) => {
@@ -17,7 +17,7 @@ const imagesMap = new Map([
     [FROZEN, frozenImages],
     [TROLLS, trollsImages],
     [HELMET, helmetImages],
-    [TROLLS_TWO, trollsTwoImages],
+    [TRNORUZICA, trnoruzicaImages],
     [BERGENS, bergensImages],
     [PEPPA_PIG, peppaPigImages],
     [HOTEL_TRANSYLVANIA, hotelTransylvaniaImages],

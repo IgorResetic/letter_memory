@@ -20,7 +20,7 @@ const MemoryGame= () => {
   const [choiceTwo, setChoiceTwo] = useState(null);
   const [disabled, setDisabled] = useState(false);
   const [currentLetter, setCurrentLetter] = useState("");
-  const [offset, setOffest] = useState(3);
+  const [offset, setOffest] = useState(5);
 
   const handler = ({ key }) => {
     if(key === " ") {
