@@ -1,5 +1,7 @@
-.Home {
+.ReadWrite {
     max-width: 1086px;
     margin: 40px auto;
+    display: flex;
+    justify-content: center;
 }
   

@@ -46,7 +46,7 @@ input[type=number]::-webkit-outer-spin-button {
 }
 */
 
-.card-grid {
+.card-grid-mem {
   margin-top: 40px;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;

@@ -112,6 +112,7 @@ export const backImages = [
   { src: "/img/cover/cover_č.png", letter: "Č" },
   //{ src: "/img/cover/cover_ć.png", letter: "Ć" },
   { src: "/img/cover/cover_d.png", letter: "D" },
+  { src: "/img/cover/cover_đ.png", letter: "Đ" },
   { src: "/img/cover/cover_e.png", letter: "E" },
   { src: "/img/cover/cover_f.png", letter: "F" },
   { src: "/img/cover/cover_g.png", letter: "G" },
@@ -126,6 +127,7 @@ export const backImages = [
   { src: "/img/cover/cover_p.png", letter: "P" },
   { src: "/img/cover/cover_r.png", letter: "R" },
   { src: "/img/cover/cover_s.png", letter: "S" },
+  { src: "/img/cover/cover_š.png", letter: "Š" },
   { src: "/img/cover/cover_t.png", letter: "T" },
   { src: "/img/cover/cover_u.png", letter: "U" },
   { src: "/img/cover/cover_v.png", letter: "V" },
@@ -133,8 +135,17 @@ export const backImages = [
   { src: "/img/cover/cover_ž.png", letter: "Ž" },
 ];
 
-export const FROZEN = "Frozen_Memory_Game"
+export const letterImages = [
+  { src: "/img/letters/Upper_Letter_G.png", letter: "G" },
+  { src: "/img/letters/Lower_Letter_R.png", letter: "r" },
+  { src: "/img/letters/Lower_Letter_A.png", letter: "a" },
+  { src: "/img/letters/Lower_Letter_N.png", letter: "n" },
+  { src: "/img/letters/Lower_Letter_K.png", letter: "k" },
+  { src: "/img/letters/Lower_Letter_O.png", letter: "o" },
+]
+
 export const TROLLS = "Trolls_Memory_Game"
+export const FROZEN = "Frozen_Memory_Game"
 export const HELMET = "Helmet_Memory_Game"
 export const TROLLS_TWO = "Trolls_TwoMemory_Game"
 export const BERGENS = "Bergens_Memory_Game"
@@ -157,4 +168,14 @@ export const memoryGames = [
   {title: "Segert Hlapic", src: "/img/home/memory_game_segert_hlapic.png", key: 8, cards: segertHlapicImages, position:"8", name: SEGERT_HLAPIC },
   {title: "Vlak u snjegu", src: "/img/home/memory_game_vlak_u_snjegu.png", key: 9, cards: vlakUSnjeguImages, position:"9", name: VLAK_U_SNJEGU },
 ]
+
+export const gamesList = [
+  { title: "Memory Games", src: "/img/cover/cover_a.png", key: 1, position: "1", games: memoryGames, name: "memory_games" },
+  { title: "Read and Write Games", src: "/img/cover/cover_b.png", key: 2, position: "2", games: memoryGames, name: "read_write_games" },
+  { title: "Word guess game", src: "/img/cover/cover_c.png", key: 3, position: "3", games: memoryGames, name: "word_guess_games" }
+  
+]
+
+
+
 

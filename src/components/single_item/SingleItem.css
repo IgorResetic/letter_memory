@@ -1,9 +1,16 @@
 .item {
     position: relative;
+    margin: 16px
 }
 
 .item img {
     display: block;
     border: 2px solid #fff;
     border-radius: 6px;
+}
+
+.flipped-item {
+    transform: rotateY(90deg);
+    transition: all ease-in 0.3s;
+    transition-delay: 0.3s;
 }

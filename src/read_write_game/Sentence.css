@@ -1,0 +1,9 @@
+.sentence {
+    color: wheat;
+    text-transform: lowercase;
+}
+
+.active {
+    color: red;
+    font-size: 17rem;
+}
