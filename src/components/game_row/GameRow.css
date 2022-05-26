@@ -47,7 +47,6 @@
 .show-final-word .guess-word-final {
     display: block;
     color: wheat;
-    text-transform: lowercase;
     font-size: 17rem;
     margin-bottom: 64px;
 }

@@ -62,6 +62,7 @@ const letterFrontMap = new Map([
     [ "T", { src: "/img/cover/cover_t.png", letter: "G" } ],
     [ "U", { src: "/img/cover/cover_u.png", letter: "G" } ],
     [ "V", { src: "/img/cover/cover_v.png", letter: "G" } ],
+    [ "Y", { src: "/img/cover/cover_y.png", letter: "Y" } ],
     [ "Z", { src: "/img/cover/cover_z.png", letter: "G" } ],
     [ "Ž", { src: "/img/cover/cover_ž.png", letter: "G" } ],
 ])
@@ -119,5 +120,6 @@ const letterMap = new Map([
     [ "U", "/img/letters/lower_letters/lower_letter_U.png"],
     [ "V", "/img/letters/lower_letters/lower_letter_V.png"],
     [ "Z", "/img/letters/lower_letters/lower_letter_Z.png"],
+    [ "Y", "/img/letters/lower_letters/lower_letter_Y.png"],
     [ "Ž", "/img/letters/lower_letters/lower_letter_Ž.png"],
 ])

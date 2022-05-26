@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { familyImages, resultImages } from "./WordGUessrConstants";
+import { wordGuesserImg, resultImages } from "./WordGUessrConstants";
 import GameRow from "../components/game_row/GameRow";
 import useEventListener from "../utils/listeners/UseEventListener";
 import "./WordGuessr.css";
@@ -8,30 +8,36 @@ import SelectionCard from "../components/card/SelectionCard";
 import SingleCard from "../components/single_card/SingleCard";
 
 const WordGuessr = () => {
-    const [choiceImage, setChoiceImage] = useState(familyImages[0]);
+    const [choiceImage, setChoiceImage] = useState(wordGuesserImg[0]);
     const [index, setIndex] = useState(0);
     const [selected, setSelected] = useState(false);
     const [currentItem, setCurrentItem] = useState(null)
     const [flipped, setFlipped] = useState(false)
     const [flippedKey, setFlippedKey] = useState(null)
-    const [finalImages, setFinalImages] = useState(familyImages)
+    const [finalImages, setFinalImages] = useState(wordGuesserImg)
     const [position, setPosition] = useState(0)
     const [result, setResult] = useState(resultImages[1])
     const [pressKey, setPressKey] = useState(null)
     const [guessed, setGuessed] = useState(false)
      // var radnomSet = randomInts(3, 2)
 
-     
- 
+
+    const firstLetterToUpper = (word) => {
+        var newWord = word
+        console.log("WORD: " + newWord.charAt(0)+ newWord.slice(1).toLowerCase());
+
+        return newWord.charAt(0).toUpperCase() + newWord.slice(1).toLowerCase()
+    }
+
     const handlerStartNewCharacter = () => {
-        if (index !== familyImages.length - 1) {
+        if (index !== wordGuesserImg.length - 1) {
             console.log("END GAME");
             var newIndex = index + 1;
-            setChoiceImage(familyImages[newIndex]);
+            setChoiceImage(wordGuesserImg[newIndex]);
             setIndex(newIndex);
         } else {
             console.log("GAME ENDED START WORD GUESS");
-            setChoiceImage(familyImages[1])
+            setChoiceImage(wordGuesserImg[1])
             setIndex(0)
             setSelected(true);
         }
@@ -44,11 +50,11 @@ const WordGuessr = () => {
     const keyDownHandler = ({ key }) => {
         if(key === " " && guessed) {
             setPressKey(null)
-            var newIndex = getRandomInt(2)
+            var newIndex = getRandomInt(wordGuesserImg.length - 1)
             setCurrentItem(newIndex)
 
             setIndex(newIndex)
-            setChoiceImage(familyImages[newIndex])
+            setChoiceImage(wordGuesserImg[newIndex])
             setGuessed(false);
         }
         setPressKey(key)
@@ -59,7 +65,7 @@ const WordGuessr = () => {
             setCurrentItem(newIndex)
 
             setIndex(newIndex)
-            setChoiceImage(familyImages[newIndex])
+            setChoiceImage(wordGuesserImg[newIndex])
             */
             setResult(resultImages[0])
             setGuessed(true)
@@ -68,11 +74,11 @@ const WordGuessr = () => {
             // setFlipped(true)
 
             /*
-            console.log("length: " + familyImages.length + "index: " + newIndex)
-            if(newIndex === familyImages.length) {
+            console.log("length: " + wordGuesserImg.length + "index: " + newIndex)
+            if(newIndex === wordGuesserImg.length) {
                 console.log("length: #############################################")
                 setIndex(0)
-                setChoiceImage(familyImages[0])
+                setChoiceImage(wordGuesserImg[0])
                 newIndex = 0
                 setFlipped(false)
                 setFlippedKey(null)
@@ -178,8 +184,8 @@ const WordGuessr = () => {
 
 /*
     useEffect(() => {
-        if(index === familyImages.length) {
-            setChoiceImage(familyImages[0]);
+        if(index === wordGuesserImg.length) {
+            setChoiceImage(wordGuesserImg[0]);
             setIndex(0);
             setFlipped(false);
             setFlippedKey(null);
@@ -202,7 +208,7 @@ const WordGuessr = () => {
                     </div>
                 </div>
                 <div className="guess-container ">
-                    <div className="guess-word">{choiceImage.name}</div>
+                    <div className="guess-word">{firstLetterToUpper(choiceImage.name)}</div>
                     <div className="guess">
                         {finalImages.map((character) => (
                             <div className="flew-row" key={character.key}>

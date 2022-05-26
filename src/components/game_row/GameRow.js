@@ -17,6 +17,13 @@ const GameRow = ({ character, handler }) => {
     console.log("STARRT GAME ROW: " + character.name);
     console.log("letterIndex: " + letterIndex);
 
+    const firstLetterToUpper = (word) => {
+        var newWord = word
+        console.log("WORD: " + newWord.charAt(0)+ newWord.slice(1).toLowerCase());
+
+        return newWord.charAt(0).toUpperCase() + newWord.slice(1).toLowerCase()
+    }
+
     // handle a choice
     const clickHandler = (character) => {
         console.log("handle choice");
@@ -88,7 +95,7 @@ const GameRow = ({ character, handler }) => {
                                 />
                             ))}
                         </div>
-                        <div className="guess-word-final">{character.name}</div>
+                        <div className="guess-word-final">{firstLetterToUpper(character.name) }</div>
                     </div>
                 </div>
             </div>
